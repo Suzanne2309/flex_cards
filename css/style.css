@@ -1,5 +1,8 @@
 /*************************************************** Général ********************************************************/
 
+/* Importer le liens pour la font-family, permet de pas alourdir le code html */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -30,10 +33,23 @@
     overflow: hidden;
 /* Box-shadow permet d'ajouter un effet d'ombre sur les cartes. Ici le code vient du site "getcsssscan.com" */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transition: 0.5s;
+}
+
+/* Ce Hover va créer un effet qui fait bouger la carte vers le haut (X = axe horziontale Y = axe verticale). Pour quel monte la valeur doit être négative. */
+.card:hover {
+    transform: translateY(-15px);
+}
+
+/* Nous avons l'action (.card:hover) qui agit sur le coeur (.coeur placé après), ce qui va permettre que l'effet du coeur qui apparaît, s'active que quand on passe la souris sur la carte. */
+.card:hover .coeur {
+    left: 0;
 }
 
 .card-header {
     height: 200px;
+/* comme le petit carré coeur est en position absolute, on peut le déplacer mais ce sera sur la page globale. Donc pour le bouger uniquement sur les cartes, il faut mettre son parent (ici card-header) en position relative. */
+    position: relative;
 }
 
 .card-header img {
@@ -57,15 +73,37 @@
 
 .card-text h1 {
     font-size: 25px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .card-text p {
     font-size: 14px;
+    font-weight: 300;
     color: rgb(147, 147, 147);
 }
 
-/************************************************** lorem ************************************************************/
+/************************************************** Coeur ************************************************************/
+
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(237, 53, 96);
+    color: #fff;
+    font-size: 20px;
+/* La position absolute permet de bouger l'élément (ici le carrée coeur) où l'on veut. */
+    position: absolute;
+    /* Ces valeurs permettent de bouger l'élément dans le coin en haut (top:0) à gauche (left:0) */
+    top: 0;
+/* On modifie la valeur de left de 0 à -50px pour qu'il soit caché en général. Nous voulons qu'il apparait seulement si l'on passe la souris sur la carte (effet hover) */
+    left: -50px;
+    transition: 0.5s;
+}
+
+
 
 /************************************************** lorem ************************************************************/
 
