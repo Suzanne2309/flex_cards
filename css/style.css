@@ -15,6 +15,7 @@
     background: rgba(68, 117, 136, 0.548);
     justify-content: center;
     align-items: center;
+/* Gap peut-être utilisé grâce à Display:flex qui a été ajouté plus haut. Cela permet de créer et définir l'espacement entre les cartes. */
     gap: 20px;
 }
 
@@ -23,8 +24,11 @@
 .card {
     background: #fff;
     width: 300px;
+/* Border-radius permet d'arrondir les angles dans ce cas des cartes */
     border-radius: 10px;
+/* Overflow : hidden permet de cacher le débordement de l'image sur le border arrondi. */
     overflow: hidden;
+/* Box-shadow permet d'ajouter un effet d'ombre sur les cartes. Ici le code vient du site "getcsssscan.com" */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
@@ -34,12 +38,15 @@
 
 .card-header img {
     width: 100%;
+/* Normalement on ne doit modifier qu'un seul paramètre de taille pour une image, mais ici cela permettait de mettre les images des cartes de même taille. Grâce à objectif-fit, elles vont remplir à 100% la taille du container parent (card-header) sans être étiré/déformé. */
     height: 100%;
     object-fit: cover;
     filter: grayscale(1);
+/* La transition permet d'influencer le temps d'apparition de l'effet hover. Quand la souris passera dessus, l'image reviendra en couleur en 0.5s. */
     transition: 0.5s;
 }
 
+/* Permet de passer de retirer l'effet grisatre de l'image de la carte, et donc elle va revenir à ses couleurs originaux. C'est effet aura leiu lorsqu'on passe la souris dessus (sans besoin de cliquer) grâce au :hover */
 .card-header img:hover {
     filter: grayscale(0);
 }
