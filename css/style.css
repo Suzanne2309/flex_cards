@@ -14,6 +14,7 @@
 
 #container {
     display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
     background: rgba(68, 117, 136, 0.548);
     justify-content: center;
@@ -46,10 +47,18 @@
     left: 0;
 }
 
+.card:hover .card-header img {
+/* Transform permet de zoomer l'image de la carte, lorsque la souris passe dessus. Transisiton et transform peuvent être utilisé SI un hover est en place. */
+    transform: scale(1.1);
+    /* Permet de passer de retirer l'effet grisatre de l'image de la carte, et donc elle va revenir à ses couleurs originaux. C'est effet aura leiu lorsqu'on passe la souris dessus (sans besoin de cliquer) grâce au :hover */
+    filter: grayscale(0);
+}
+
 .card-header {
-    height: 200px;
 /* comme le petit carré coeur est en position absolute, on peut le déplacer mais ce sera sur la page globale. Donc pour le bouger uniquement sur les cartes, il faut mettre son parent (ici card-header) en position relative. */
     position: relative;
+    height: 200px;
+    overflow: hidden;
 }
 
 .card-header img {
@@ -60,11 +69,6 @@
     filter: grayscale(1);
 /* La transition permet d'influencer le temps d'apparition de l'effet hover. Quand la souris passera dessus, l'image reviendra en couleur en 0.5s. */
     transition: 0.5s;
-}
-
-/* Permet de passer de retirer l'effet grisatre de l'image de la carte, et donc elle va revenir à ses couleurs originaux. C'est effet aura leiu lorsqu'on passe la souris dessus (sans besoin de cliquer) grâce au :hover */
-.card-header img:hover {
-    filter: grayscale(0);
 }
 
 .card-text {
@@ -92,7 +96,6 @@
     width: 50px;
     height: 50px;
     background: rgb(237, 53, 96);
-    color: #fff;
     font-size: 20px;
 /* La position absolute permet de bouger l'élément (ici le carrée coeur) où l'on veut. */
     position: absolute;
@@ -103,7 +106,9 @@
     transition: 0.5s;
 }
 
-
+.coeur a {
+    color: #fff;
+}
 
 /************************************************** lorem ************************************************************/
 
