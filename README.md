@@ -25,13 +25,6 @@ Plusieurs effets d’interaction ont été ajoutés :
 - Compréhension de l’importance des commentaires dans le code, surtout lors des premiers projets.
 
 
-📂 Contenu du dépôt
-
-index.html → fichier principal contenant la structure de la page.
-css -> style.css → fichier de mise en forme.
-img → fichier contenant les images des 3 cartes.
-
-
 🔮 Suite du parcours
 
 Ce projet est un exercice pour mieux comprendre les flexbox. Ce que j'ai appris durant celui-ci, sera utilisé pour la partie 2 du projet "Simpsons".
